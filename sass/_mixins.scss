@@ -1,0 +1,49 @@
+// Mobile breakpoints
+// ======================================
+
+@mixin tablet {
+  @media screen and (max-width: $breakpoint-tablet) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: $breakpoint-mobile) {
+    @content;
+  }
+}
+
+
+// Pixels to Ems
+// ======================================
+
+@function px-to-em($px) {
+  @return ($px / $base-px) * 1em;
+}
+
+
+// Clearfix mixin
+// ======================================
+
+@mixin clearfix() {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+
+// Reset lists
+// ======================================
+
+@mixin reset-list(){
+  ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+      list-style: none;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "sass-starter-kit",
+  "version": "1.0.0",
+  "description": "Simple and lightweight Sass starter kit to use on front end projects.",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "sass",
+    "postcss",
+    "starter",
+    "kit",
+    "front",
+    "end",
+    "boilerplate",
+    "framework"
+  ],
+  "author": "Ismael Martínez",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^6.1.1",
+    "grunt": "^0.4.5",
+    "grunt-browser-sync": "^2.2.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-postcss": "^0.7.1",
+    "grunt-sass": "^1.1.0"
+  }
+}

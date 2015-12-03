@@ -1,0 +1,34 @@
+// Variables
+// ======================================
+
+// Base
+$font-size-base:    1em;
+$line-height-base:  1.5;
+
+$base-px: 					16px;
+
+// Colors
+$background-color:  #fff;
+$text-color:        #222;
+$main-color:        #336699;
+$emphasis-color:    #ffcc66;
+
+$link-color:        $main-color;
+
+$gray-lighter:      lighten(#000, 90%); // #e6e6e6
+$gray:              lighten(#000, 40%); // #666
+$gray-darker:       lighten(#000, 20%); // #333
+
+// Fonts
+$font-stack-main:   'Arial', 'Helvetica Neue', 'Helvetica', sans-serif;
+$font-stack-alt:    'Georgia', 'Times', 'Times New Roman', serif;
+$font-stack-code:   'Source Code Pro', 'Consolas', 'Courier', monospace;
+
+// Grid and Layout
+$grid-columns:      12;
+$container-width:   980px;
+$gutter:            10px;
+
+// Breakpoints
+$breakpoint-tablet: 991px;
+$breakpoint-mobile: 580px;

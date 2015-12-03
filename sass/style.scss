@@ -1,0 +1,235 @@
+/*!
+ * Sass Starter Kit v1.0.0
+ * Copyright (c) 2015 - Ismael Martinez
+ * http://github.com/ismamz/sass-starter-kit/
+ * Licensed under MIT
+ */
+
+// General imports
+@import "variables";
+@import "mixins";
+@import "normalize";
+
+
+/* ==========================================================================
+   Reboot
+   ========================================================================== */
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 100%;
+  -webkit-tap-highlight-color: transparent;
+  overflow-y: scroll;
+}
+
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+body {
+  background-color: $background-color;
+  color: $text-color;
+  font-family: $font-stack-main;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+}
+
+
+/* ==========================================================================
+   Type
+   ========================================================================== */
+a,
+a:visited {
+  color: $main-color;
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 1em 0;
+}
+
+h1 {
+  font-size: 2.125em;
+}
+
+h2 {
+  font-size: 1.75em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+h4 {
+  font-size: 1.25em;
+}
+
+h5 {
+  font-size: 1.125em;
+}
+
+h6 {
+  font-size: 1em;
+}
+
+blockquote {
+  margin: 0 0 0 30px;
+  border-left: 5px solid $gray-lighter;
+  padding-left: 20px;
+}
+
+.lead {
+  font-size: 24px;
+  line-height: 1.4;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px dashed #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+.container {
+  max-width: $container-width;
+  margin: 0 auto;
+
+  @media screen and (max-width: $container-width + $gutter*2) {
+    width: 96%;
+  }
+}
+
+.container:before,
+.container:after {
+  display: table;
+  content: " ";
+}
+
+.container:after {
+  clear: both;
+}
+
+.row:before,
+.row:after {
+  display: table;
+  content: " ";
+}
+.row:after {
+  clear: both;
+}
+
+.row {
+  margin-left: -$gutter;
+  margin-right: -$gutter;
+}
+
+
+/* ==========================================================================
+   Grid
+   ========================================================================== */
+[class^="col-"] {
+  float: left;
+  padding-left: $gutter;
+  padding-right: $gutter;
+}
+
+// desktop
+@for $i from 1 through $grid-columns {
+  .col-#{$i} {
+    width: ($i/$grid-columns) * 100%;
+  }
+}
+
+// tablet
+@include tablet {
+  @for $i from 1 through $grid-columns {
+    .col-md-#{$i} {
+      width: ($i/$grid-columns) * 100%;
+    }
+  }
+}
+
+// mobile
+@include mobile {
+  @for $i from 1 through $grid-columns {
+    .col-sm-#{$i} {
+      width: ($i/$grid-columns) * 100%;
+    }
+  }
+}
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+// Hidden (for Breakpoints)
+.hidden {
+    display: none !important;
+}
+@include tablet {
+  .hidden-md {
+      display: none !important;
+  }
+}
+@include mobile {
+  .hidden-sm {
+      display: none !important;
+  }
+}
+
+// Floats
+.fl {
+  float: left !important;
+}
+.fr {
+  float: right !important;
+}
+
+// Hide only visually, but have it available for screen readers
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+// Clearfix
+.cfx:before,
+.cfx:after {
+    content: " ";
+    display: table;
+}
+.cfx:after {
+    clear: both;
+}
+
+
+/* ==========================================================================
+   NOTE: Add new rules or import partials after this comment
+   ========================================================================== */
