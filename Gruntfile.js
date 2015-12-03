@@ -31,37 +31,38 @@ module.exports = function (grunt) {
 			}
 		},
 
-		// BrowserSync
+		// Watch
+		watch: {
+			options: {
+      	spawn: false,
+				livereload: true
+      },
+			pages: {
+        files: ['*.html']
+      },
+			styles: {
+        files: ['sass/**/*.scss'],
+        tasks: ['sass', 'postcss']
+      }
+		},
+
 		browserSync: {
 			dev: {
 				bsFiles: {
-					src: ['sass/*', '*.html']
+					src: [
+						'*.html',
+						'css/*.css'
+					]
 				},
 				options: {
 					watchTask: true,
-					server: './'
+					server: {
+            baseDir: "./"
+        	}
 				}
 			}
-		},
-
-		// Watch
-		watch: {
-			pages: {
-        files: ['*.html'], // which files to watch
-        options: {
-          nospawn: true,
-          livereload: true
-        }
-      },
-			styles: {
-        files: ['sass/**/*'],
-        tasks: ['sass', 'postcss'],
-        options: {
-          nospawn: true,
-          livereload: true
-        }
-      }
 		}
+
 	});
 
 	grunt.loadNpmTasks('grunt-sass');
@@ -78,8 +79,8 @@ module.exports = function (grunt) {
 	// server
 	grunt.registerTask('server', [
 		'browserSync',
-    'watch'
-  ])
+		'watch'
+	]);
 
 	// default
 	grunt.registerTask('default', [
