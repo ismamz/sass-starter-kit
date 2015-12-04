@@ -18,7 +18,7 @@
 *:before,
 *:after {
   -webkit-box-sizing: inherit;
-  box-sizing: inherit;
+  				box-sizing: inherit;
 }
 
 html {
@@ -47,7 +47,7 @@ body {
    ========================================================================== */
 a,
 a:visited {
-  color: $main-color;
+  color: $link-color;
   text-decoration: underline;
 
   &:hover {
@@ -227,6 +227,13 @@ hr {
 }
 .cfx:after {
     clear: both;
+}
+
+// Responsive images
+.img-responsive {
+	display: block;
+	width: 100%;
+	height: auto;
 }
 
 
