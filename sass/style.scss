@@ -140,9 +140,11 @@ hr {
   clear: both;
 }
 
-.row {
-  margin-left: -$gutter;
-  margin-right: -$gutter;
+@if $gutter-enable {
+	.row {
+		margin-left: -$gutter;
+		margin-right: -$gutter;
+	}
 }
 
 
@@ -151,8 +153,11 @@ hr {
    ========================================================================== */
 [class^="col-"] {
   float: left;
-  padding-left: $gutter;
-  padding-right: $gutter;
+
+	@if $gutter-enable {
+		padding-left: $gutter;
+		padding-right: $gutter;
+	}
 }
 
 // desktop
