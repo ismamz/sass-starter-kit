@@ -14,11 +14,21 @@
 }
 
 
-// Pixels to Ems
+// Convert pixels to ems
+// eg. for a relational value of 12px write em(12) when the parent is 16px
+// if the parent is another value say 24px write em(12, 24)
 // ======================================
 
-@function px-to-em($px) {
-  @return ($px / $base-px) * 1em;
+@function em($pixels, $context: $base-em) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return $pixels / $context * 1em;
 }
 
 
@@ -35,15 +45,14 @@
 
 
 // Reset lists
+// include this mixin for unstyled lists
 // ======================================
 
 @mixin reset-list(){
-  ul {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 
-    li {
-      list-style: none;
-    }
+  li {
+    list-style: none;
   }
 }

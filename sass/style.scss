@@ -24,7 +24,7 @@
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-size: 100%;
+  font-size: $font-size-base/$base-em * 100%;
   -webkit-tap-highlight-color: transparent;
   overflow-y: scroll;
 }
@@ -37,7 +37,7 @@ body {
   background-color: $background-color;
   color: $text-color;
   font-family: $font-stack-main;
-  font-size: $font-size-base;
+  font-size: $font-size-body;
   line-height: $line-height-base;
 }
 
@@ -61,7 +61,9 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 1em 0;
+	margin-top: em(26);
+	margin-bottom: em(12);
+	line-height: $line-height-hx;
 }
 
 h1 {
@@ -95,17 +97,15 @@ blockquote {
 }
 
 .lead {
-  font-size: 24px;
-  line-height: 1.4;
+  font-size: em(22);
 }
 
+// Horizontal rule
 hr {
-  display: block;
   height: 1px;
   border: 0;
-  border-top: 1px dashed #ccc;
-  margin: 1em 0;
-  padding: 0;
+  border-top: 1px solid $gray-lighter;
+  margin: 3em 0;
 }
 
 
@@ -116,9 +116,9 @@ hr {
   max-width: $container-width;
   margin: 0 auto;
 
-  @media screen and (max-width: $container-width + $gutter*2) {
-    width: 96%;
-  }
+	@media screen and ( max-width: em($container-width + ($container-gutter * 2)) ) {
+		margin: 0 em($container-gutter);
+	}
 }
 
 .container:before,
@@ -239,6 +239,51 @@ hr {
 	display: block;
 	width: 100%;
 	height: auto;
+}
+
+// List inline
+.list-inline {
+	list-style: none;
+	margin: 1em 0;
+	padding-left: 0;
+
+	li {
+		display: inline-block;
+		padding: 0 1em;
+	}
+
+	li:first-child {
+		padding-left: 0;
+	}
+	li:last-child {
+		padding-right: 0;
+	}
+}
+
+
+/* ==========================================================================
+   Accesibility
+   ========================================================================== */
+// Skip link
+.skip-link {
+	background: #000;
+	color: #fff;
+	width: 1px;
+	height: 1px;
+	padding: 1em 1.5em;
+	position: absolute;
+	left: -10000px;
+	top: -40px;
+	overflow: hidden;
+	transition: top 0.3s;
+
+	&:focus {
+		left: 0;
+		top: 0;
+		width: auto;
+		height: auto;
+		z-index: index($elements, skip-nav);
+	}
 }
 
 
