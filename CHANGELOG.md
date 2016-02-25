@@ -3,6 +3,9 @@ All notable changes to this project will be documented in this file.
 
 ## v1.0.0
 
+### 2016-02-25
+-  Add text align classes
+
 ### 2016-02-23
 - New font sizes configuration
 - Change `hr` default style
