@@ -3,6 +3,14 @@ All notable changes to this project will be documented in this file.
 
 ## v1.0.0
 
+### 2016-03-16
+- Add `.show-bp`. Similar to `.hidden-bp`
+- Separate grid styles in a new file `_grid.scss`
+- Remove `.img-responsive`
+- Make all images responsiveness (in Reboot)
+- Change class name `visuallyhidden` to `sr`
+- Change mixin name `clearfix` to `cfx` to be coherent with `.cfx` class
+
 ### 2016-02-25
 -  Add text align classes
 

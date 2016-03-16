@@ -1,0 +1,73 @@
+/* Layout
+   ========================================================================== */
+.container {
+  max-width: $container-width;
+  margin: 0 auto;
+
+  @media screen and ( max-width: em($container-width + ($container-gutter * 2)) ) {
+  	margin: 0 em($container-gutter);
+	}
+}
+
+.container:before,
+.container:after {
+  display: table;
+  content: " ";
+}
+
+.container:after {
+  clear: both;
+}
+
+.row:before,
+.row:after {
+  display: table;
+  content: " ";
+}
+.row:after {
+  clear: both;
+}
+
+@if $gutter-enable {
+  .row {
+		margin-left: -$gutter;
+		margin-right: -$gutter;
+  }
+}
+
+
+/* Columns Sizes
+   ========================================================================== */
+[class^="col-"] {
+  float: left;
+
+	@if $gutter-enable {
+		padding-left: $gutter;
+		padding-right: $gutter;
+	}
+}
+
+// desktop
+@for $i from 1 through $grid-columns {
+  .col-#{$i} {
+    width: ($i/$grid-columns) * 100%;
+  }
+}
+
+// tablet
+@include tablet {
+  @for $i from 1 through $grid-columns {
+    .col-md-#{$i} {
+      width: ($i/$grid-columns) * 100%;
+    }
+  }
+}
+
+// mobile
+@include mobile {
+  @for $i from 1 through $grid-columns {
+    .col-sm-#{$i} {
+      width: ($i/$grid-columns) * 100%;
+    }
+  }
+}

@@ -35,7 +35,7 @@
 // Clearfix mixin
 // ======================================
 
-@mixin clearfix() {
+@mixin cfx() {
   &::after {
     content: "";
     display: table;
