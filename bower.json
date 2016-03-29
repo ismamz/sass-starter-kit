@@ -1,0 +1,30 @@
+{
+  "name": "sass-starter-kit",
+  "description": "Simple and lightweight Sass starter kit to use on front end projects.",
+  "main": "Gruntfile.js",
+  "authors": [
+    "Ismael Martínez"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "sass",
+    "postcss",
+    "starter",
+    "kit",
+		"css",
+    "frontend",
+    "boilerplate",
+    "framework"
+  ],
+  "homepage": "https://github.com/ismamz/sass-starter-kit",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+		"css",
+    "CHANGELOG.md",
+    "README.md",
+		"LICENSE"
+  ]
+}

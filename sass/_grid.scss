@@ -71,3 +71,45 @@
     }
   }
 }
+
+
+/* Row Sizes
+   ========================================================================== */
+/**
+ * Add row-n to row div to make pseudo-rows
+ * Only for 12 cols of 1, 6 cols of 2, 4 cols of 3, 3 cols of 4, 2 cols of 6
+ */
+
+// desktop
+@for $i from 2 through $grid-columns {
+	@if $grid-columns % $i == 0 {
+		$j: $grid-columns / $i;
+		.row-#{$i} .col-#{$j}:nth-child(#{$i}n+1){
+			clear: left;
+		}
+	}
+}
+
+// tablet
+@include tablet {
+	@for $i from 2 through $grid-columns {
+		@if $grid-columns % $i == 0 {
+			$j: $grid-columns / $i;
+			.row-md-#{$i} .col-md-#{$j}:nth-child(#{$i}n+1){
+				clear: left;
+			}
+		}
+	}
+}
+
+// mobile
+@include mobile {
+	@for $i from 2 through $grid-columns {
+		@if $grid-columns % $i == 0 {
+			$j: $grid-columns / $i;
+			.row-sm-#{$i} .col-sm-#{$j}:nth-child(#{$i}n+1){
+				clear: left;
+			}
+		}
+	}
+}
