@@ -1,4 +1,4 @@
-#Sass Starter Kit
+# Sass Starter Kit
 
 > Kit de inicio Sass simple y liviano para usar en proyectos de front end.
 
@@ -8,7 +8,7 @@ Utiliza [normalize.css](http://github.com/necolas/normalize.css) y una serie de 
 
 El kit incluye un sistema de grilla super simple y similar a la [grilla de Bootstrap](https://github.com/twbs/bootstrap), pero con solo dos breakpoints.
 
-##Contenido del Kit
+## Contenido del Kit
 
 En la carpeta `sass` tenemos el archivo principal llamado `style.scss` y 3 partes:
 
@@ -73,14 +73,21 @@ Ejemplo de uso del sistema de grilla:
 </div>
 ```
 
-##Grunt
+## Grunt
 
 Este kit incluye un Gruntfile que compila Sass y utiliza el plugin autoprefixer de PostCSS. Siéntase libre de añadir sus propios plugins al proyecto.
 
-##Cómo empezar
+## Cómo empezar
+
 
 - Descargar el Kit o clonar el repositorio.
 - Cambiar el nombre de la carpeta por el nombre de su proyecto.
 - Abrir la línea de comandos e instalar dependencias: `npm install`
 - Correr `grunt` para compilar y desarrollar.
 - Desarrolle su proyecto.
+
+### Bower
+
+```
+bower install sass-starter-kit --save
+```
