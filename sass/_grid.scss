@@ -4,8 +4,8 @@
   max-width: $container-width;
   margin: 0 auto;
 
-  @media screen and ( max-width: em($container-width + ($container-gutter * 2)) ) {
-  	margin: 0 em($container-gutter);
+  @media screen and (max-width: em($container-width + ($container-gutter * 2))) {
+    margin: 0 em($container-gutter);
 	}
 }
 
@@ -24,14 +24,15 @@
   display: table;
   content: " ";
 }
+
 .row:after {
   clear: both;
 }
 
 @if $gutter-enable {
   .row {
-		margin-left: -$gutter;
 		margin-right: -$gutter;
+		margin-left: -$gutter;
   }
 }
 
@@ -41,16 +42,16 @@
 [class^="col-"] {
   float: left;
 
-	@if $gutter-enable {
-		padding-left: $gutter;
+  @if $gutter-enable {
 		padding-right: $gutter;
+		padding-left: $gutter;
 	}
 }
 
 // desktop
 @for $i from 1 through $grid-columns {
   .col-#{$i} {
-    width: ($i/$grid-columns) * 100%;
+    width: ($i / $grid-columns) * 100%;
   }
 }
 
@@ -58,7 +59,7 @@
 @include tablet {
   @for $i from 1 through $grid-columns {
     .col-md-#{$i} {
-      width: ($i/$grid-columns) * 100%;
+      width: ($i / $grid-columns) * 100%;
     }
   }
 }
@@ -67,7 +68,7 @@
 @include mobile {
   @for $i from 1 through $grid-columns {
     .col-sm-#{$i} {
-      width: ($i/$grid-columns) * 100%;
+      width: ($i / $grid-columns) * 100%;
     }
   }
 }
@@ -82,9 +83,10 @@
 
 // desktop
 @for $i from 2 through $grid-columns {
-	@if $grid-columns % $i == 0 {
+  @if $grid-columns % $i == 0 {
 		$j: $grid-columns / $i;
-		.row-#{$i} .col-#{$j}:nth-child(#{$i}n+1){
+
+		.row-#{$i} .col-#{$j}:nth-child(#{$i}n+1) {
 			clear: left;
 		}
 	}
@@ -92,10 +94,11 @@
 
 // tablet
 @include tablet {
-	@for $i from 2 through $grid-columns {
-		@if $grid-columns % $i == 0 {
+  @for $i from 2 through $grid-columns {
+    @if $grid-columns % $i == 0 {
 			$j: $grid-columns / $i;
-			.row-md-#{$i} .col-md-#{$j}:nth-child(#{$i}n+1){
+
+			.row-md-#{$i} .col-md-#{$j}:nth-child(#{$i}n+1) {
 				clear: left;
 			}
 		}
@@ -104,10 +107,11 @@
 
 // mobile
 @include mobile {
-	@for $i from 2 through $grid-columns {
-		@if $grid-columns % $i == 0 {
+  @for $i from 2 through $grid-columns {
+    @if $grid-columns % $i == 0 {
 			$j: $grid-columns / $i;
-			.row-sm-#{$i} .col-sm-#{$j}:nth-child(#{$i}n+1){
+
+			.row-sm-#{$i} .col-sm-#{$j}:nth-child(#{$i}n+1) {
 				clear: left;
 			}
 		}

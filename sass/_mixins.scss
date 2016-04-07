@@ -36,11 +36,11 @@
 // ======================================
 
 @mixin cfx() {
-  &::after {
-    content: "";
+  &:after {
     display: table;
     clear: both;
-  }
+    content: "";
+	}
 }
 
 
@@ -48,7 +48,7 @@
 // include this mixin for unstyled lists
 // ======================================
 
-@mixin reset-list(){
+@mixin reset-list() {
   margin: 0;
   padding: 0;
 

@@ -17,16 +17,15 @@
 *,
 *:before,
 *:after {
-  -webkit-box-sizing: inherit;
-  				box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 html {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  font-size: $font-size-base/$base-em * 100%;
-  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
   overflow-y: scroll;
+  font-size: $font-size-base / $base-em * 100%;
+
+  -webkit-tap-highlight-color: transparent;
 }
 
 // Make all images responsiveness
@@ -40,11 +39,11 @@ img {
    Base
    ========================================================================== */
 body {
-  background-color: $background-color;
-  color: $text-color;
   font-family: $font-stack-main;
   font-size: $font-size-body;
   line-height: $line-height-base;
+  color: $text-color;
+  background-color: $background-color;
 }
 
 
@@ -67,9 +66,9 @@ h3,
 h4,
 h5,
 h6 {
-	margin-top: em(26);
-	margin-bottom: em(12);
-	line-height: $line-height-hx;
+  margin-top: em(26);
+  margin-bottom: em(12);
+  line-height: $line-height-hx;
 }
 
 h1 {
@@ -97,9 +96,9 @@ h6 {
 }
 
 blockquote {
+  padding-left: 20px;
   margin: 0 0 0 30px;
   border-left: 5px solid $gray-lighter;
-  padding-left: 20px;
 }
 
 .lead {
@@ -109,9 +108,9 @@ blockquote {
 // Horizontal rule
 hr {
   height: 1px;
+  margin: 3em 0;
   border: 0;
   border-top: 1px solid $gray-lighter;
-  margin: 3em 0;
 }
 
 
@@ -128,11 +127,13 @@ hr {
 .hidden {
   display: none !important;
 }
+
 @include tablet {
   .hidden-md {
     display: none !important;
   }
 }
+
 @include mobile {
   .hidden-sm {
     display: none !important;
@@ -143,11 +144,13 @@ hr {
 .show {
   display: block !important;
 }
+
 @include tablet {
   .show-md {
     display: block !important;
   }
 }
+
 @include mobile {
   .show-sm {
     display: block !important;
@@ -155,46 +158,44 @@ hr {
 }
 
 // Floats
-.fl {
-  float: left !important;
-}
-.fr {
-  float: right !important;
-}
+.fl { float: left !important; }
+.fr { float: right !important; }
 
 // Clearfix
 .cfx:before,
 .cfx:after {
-    content: " ";
-    display: table;
+  display: table;
+  content: " ";
 }
+
 .cfx:after {
-    clear: both;
+  clear: both;
 }
 
 // List inline
 .list-inline {
-	list-style: none;
-	margin: 1em 0;
-	padding-left: 0;
+  padding-left: 0;
+  margin: 1em 0;
+  list-style: none;
 
-	li {
-		display: inline-block;
-		padding: 0 1em;
-	}
+  li {
+    display: inline-block;
+    padding: 0 1em;
+  }
 
-	li:first-child {
-		padding-left: 0;
-	}
-	li:last-child {
-		padding-right: 0;
-	}
+  li:first-child {
+    padding-left: 0;
+  }
+
+  li:last-child {
+    padding-right: 0;
+  }
 }
 
 // Text aligns
-.text-center 	{ text-align: center; }
-.text-left 		{ text-align: left; }
-.text-right 	{ text-align: right; }
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
 
 
 /* ==========================================================================
@@ -208,30 +209,30 @@ hr {
   padding: 0;
   margin: -1px;
   overflow: hidden;
-  clip: rect(0,0,0,0);
+  clip: rect(0, 0, 0, 0);
   border: 0;
 }
 
 // Skip link
 .skip-link {
-	background: #000;
-	color: #fff;
-	width: 1px;
-	height: 1px;
-	padding: 1em 1.5em;
-	position: absolute;
-	left: -10000px;
-	top: -40px;
-	overflow: hidden;
-	transition: top 0.3s;
+  position: absolute;
+  top: -40px;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  padding: 1em 1.5em;
+  overflow: hidden;
+  color: #fff;
+  background: #000;
+  transition: top .3s;
 
-	&:focus {
-    left: 0;
+  &:focus {
     top: 0;
+    left: 0;
+    z-index: index($elements, skip-nav);
     width: auto;
     height: auto;
-    z-index: index($elements, skip-nav);
-	}
+  }
 }
 
 
